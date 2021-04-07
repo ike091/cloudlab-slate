@@ -26,10 +26,10 @@ node = request.RawPC('node1')
 
 node.disk_image = CENTOS7_IMG
 
-# request a pool of dynamic publically routable ip addresses
-address_pool = igext.AddressPool('address_pool', NUM_IP_ADDRESSES)
-address_pool.component_manager_id = ('urn:publicid:IDN+utah.cloudlab.us+authority+cm')
-request.addResource(address_pool)
+# request a pool of dynamic publically routable ip addresses - pool name cannot contain underscores - hidden bug
+addressPool = igext.AddressPool('addressPool', NUM_IP_ADDRESSES)
+addressPool.component_manager_id = ('urn:publicid:IDN+utah.cloudlab.us+authority+cm')
+request.addResource(addressPool)
 
 # output RSpec
 pc.printRequestRSpec(request)
