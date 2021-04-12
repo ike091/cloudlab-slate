@@ -26,6 +26,7 @@ params = pc.bindParameters()
 # Validate parameters
 if params.public_ip_count < 1:
     pc.reportError(portal.ParameterError('You must allocate at least 1 additional public ip.', ['public_ip_count']))
+pc.verifyParameters()
 
 # Create a node
 node = request.RawPC('node1')
