@@ -36,7 +36,6 @@ node.disk_image = CENTOS7_IMG
 
 # Request a pool of dynamic publically routable ip addresses - pool name cannot contain underscores - hidden bug
 addressPool = igext.AddressPool('addressPool', int(params.public_ip_count))
-addressPool.component_manager_id = ('urn:publicid:IDN+utah.cloudlab.us+authority+cm')
 request.addResource(addressPool)
 
 # Output RSpec
